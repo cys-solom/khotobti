@@ -525,10 +525,13 @@ setInterval(tick,1000);tick();
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-/* music */
+/* music — created and started only when the envelope is opened */
 let audio=null,mOn=false;
-if(CONFIG.music){audio=new Audio(CONFIG.music);audio.loop=true;audio.volume=.5;}
-function playMusic(){if(audio&&!mOn)audio.play().then(()=>mOn=true).catch(()=>{});}
+function playMusic(){
+  if(!CONFIG.music||mOn)return;
+  audio=new Audio(CONFIG.music); audio.loop=true; audio.volume=.5;
+  audio.play().then(()=>mOn=true).catch(()=>{});
+}
 </script>
 </body>
 </html>
