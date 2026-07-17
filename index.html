@@ -304,10 +304,16 @@
   .drow2 .dv2{font-family:'Cormorant Garamond','Constantia',Georgia,serif;font-size:23px;color:var(--ivory);}
   .rule2{height:1px;background:rgba(203,184,120,.24);}
 
-  .links2{display:flex;gap:28px;justify-content:center;margin-top:36px;flex-wrap:wrap;}
-  .link2{font-family:'Cormorant Garamond',Georgia,serif;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);
-    text-decoration:none;border-bottom:1px solid var(--gold-soft);padding-bottom:5px;transition:opacity .2s;}
-  .link2:active{opacity:.6;}
+  .links2{display:flex;gap:16px;justify-content:center;margin-top:36px;flex-wrap:wrap;}
+  .link2{display:flex;align-items:center;gap:10px;font-family:'Cormorant Garamond',Georgia,serif;
+    font-size:13px;letter-spacing:2.5px;text-transform:uppercase;color:var(--ivory);
+    text-decoration:none;padding:14px 26px;border-radius:32px;border:1px solid var(--gold-soft);
+    background:linear-gradient(180deg, rgba(203,184,120,.12), rgba(203,184,120,.03));
+    box-shadow:0 10px 22px rgba(0,0,0,.25);
+    transition:transform .15s ease, background .2s ease, border-color .2s ease;}
+  .link2 .ic2{font-size:15px;color:var(--gold);line-height:0;}
+  .link2:active{transform:scale(.96);background:linear-gradient(180deg, rgba(203,184,120,.2), rgba(203,184,120,.06));}
+  @media(hover:hover){.link2:hover{border-color:var(--gold);background:linear-gradient(180deg, rgba(203,184,120,.2), rgba(203,184,120,.06));}}
 
   .closing2{padding:92px 28px 44px;text-align:center;max-width:540px;margin:0 auto;}
   .verse2{font-family:'Cormorant Garamond','Constantia',Georgia,serif;font-style:italic;font-size:clamp(21px,5.6vw,26px);line-height:1.7;color:var(--cream);margin:0;}
@@ -423,8 +429,8 @@
     </div>
     <div class="map-frame" style="margin-top:32px;"><iframe id="mapFrame" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
     <div class="links2">
-      <a class="link2" id="calBtn" target="_blank" rel="noopener">Add to Calendar</a>
-      <a class="link2" id="mapBtn" target="_blank" rel="noopener">Get Directions</a>
+      <a class="link2" id="calBtn" target="_blank" rel="noopener"><span class="ic2">&#128197;</span>Add to Calendar</a>
+      <a class="link2" id="mapBtn" target="_blank" rel="noopener"><span class="ic2">&#128205;</span>Get Directions</a>
     </div>
   </section>
 
